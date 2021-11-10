@@ -229,7 +229,8 @@ nightly,application-930406c336c4511761e0eb7a180f81bd460720a3118184fa9902cfe31247
 
 ## 参考链接：
 
-通过提取 `/assets/webpack/manifest.json` 的hash字段获取版本。
+通过提取 `/assets/webpack/manifest.json` 的hash字段获取版本，
+优点：nmap自动化扫描探测，版本hash较全，缺点：无法通过网络空间引擎fofa、shodan等快速定位某一类gitlab版本资产。
 
 https://github.com/righel/gitlab-version-nse/blob/main/gitlab_versions_map.txt
 
