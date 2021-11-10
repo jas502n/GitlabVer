@@ -1,4 +1,15 @@
-# Gitlab version index
+# Gitlab version index 版本号索引
+
+主要分为 `gitlab-ee (931个)` 和 `gitlab-ce (934个)`
+
+可以从v2接口爬取tags，大概10页
+```
+https://hub.docker.com/v2/repositories/gitlab/gitlab-ee/tags/?page_size=100&page=1
+https://hub.docker.com/v2/repositories/gitlab/gitlab-ce/tags/?page_size=100&page=1
+```
+
+## 0x01 分析
+
 ```cmd
 ╭─root@ubuntu1804 ~/github/gitlab
 ╰─# cat fileVer.txt|grep 14.2
@@ -28,7 +39,7 @@
 
 经检测发现，小版本号内的css文件名基本一致，也就是说，基于css文件只能确定gitlab的大版本号,可能极个别情况下会出现小版本不一致情况，从而精确到具体小版本号，例如 `14.2.6-ce.0` ; 其中rc 版本又和ce版本不同，例如 `13.7.0-rc3.ce.0` 。
 
-官网tags大概有[934](https://hub.docker.com/v2/repositories/gitlab/gitlab-ce/tags/?page_size=100&page=1)个，为了节省时间，只收集 `x.x.0-ce.0 ` 版本，大概71个。
+官网tags大概有[934](https://hub.docker.com/v2/repositories/gitlab/gitlab-ce/tags/?page_size=100&page=1)个，为了节省时间，收集 `x.x.0-ce.0 ` 版本，大概71个。
 
 ```cmd
 14.4.0-ce.0
@@ -103,7 +114,7 @@
 8.2.0-ce.0
 8.0.0-ce.0
 ```
-
+## 0x02 Gitlab-CE Version
 爬取结果如下：
 
 | ID | Gitlab Version | Filename |
